@@ -23,15 +23,40 @@ public class Main {
                 sinal = 'O';
             }
 
-            boolean rightRow = false;
-            while (!rightRow){
-                System.out.println("Iput the row (1,2,3) ");
+            boolean validRow = false;
+            while (!validRow){
+                System.out.println("Iput the row (1,2,3). ");
                 row = scanner.nextInt();
                 if (row >= 1 && row <=3){
-                    rightRow = true;
+                    validRow = true;
                 }
                 else {
-                    System.out.println("Try again invalid row");
+                    System.out.println("Try again invalid row.");
+                }
+            }
+
+            boolean validcolumn = true;
+            while (!!validcolumn){
+                System.out.println("input the column (1, 2, 3). ");
+                column = scanner.nextInt();
+                if (column >= 1 && column <=3){
+                    validcolumn = true;
+                }
+                else {
+                    System.out.println("Try again invalid column.");
+                }
+            }
+            row--;
+            column--;
+            if (hash[row][column] == 'X' || hash[row][column] == 'O'){
+                System.out.println("Try another position");
+            }else { // jogada valida
+                hash[row][column] = sinal;
+                move++;
+            }
+            for (int i = 0; i <hash.length; i++){
+                for (int j = 0;j < hash[i].length; j++){
+
                 }
             }
 
